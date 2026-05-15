@@ -18,7 +18,7 @@ Python is a high-level, interpreted programming language known for its simplicit
 
 Variables are containers for storing data values. Python has several built-in data types:
 
-#### Basic Data Types:
+#### Basic Data Types:   
 - **Integers (`int`)**: Whole numbers (e.g., `42`, `-10`)
 - **Floats (`float`)**: Decimal numbers (e.g., `3.14`, `-2.5`)
 - **Strings (`str`)**: Text data (e.g., `"Hello World"`)
