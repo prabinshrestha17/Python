@@ -17,7 +17,7 @@ def addStudent():
 
 
         else:
-            print("Invalid input! Marks must be numbers. Student not added.")
+            print("Invalid input...... Marks must be numbers. Student not added.")
             return
 
     average = total/len(subjects)
@@ -39,28 +39,33 @@ def displayAllStudents():
         return 
 
     print("--- All students fetched successfully ---")
-    for student in students:
-        print(f"Name: {student['Name']}")
 
-        print("Marks: ", end = "")
+    for student in students:
+        print(f"\nName: {student['Name']}")
+
+        print("Marks:-----------")
         for subject, mark in student["Marks"].items():
-            print(f"{subject}: {mark} ")
-            print(f" Total: {student["Total"]:.2f}, Average: {student["Average"]}")
-            print("-" * 50)
+            print(f"{subject}: {mark}")
+
+        print(f"Total: {student['Total']:.2f}")
+        print(f"Average: {student['Average']:.2f}")
+        print("-" * 50)
 
 def highestScoringStudent():
-    if len(students):
+    if len(students) == 0:
         print("No students found....")
-        return 
+        return
 
-        topStudent = [students[0]]
-        for student in students:
-            if student["Total"] > topStudent["Total"]:
-                topStudent = student
+    topStudent = students[0]
 
-    print(f"\n--- Highest Scoring Student ---")
-    print(f"Name: {topStudent["Name"]}")
-    print(f"Total Marks: {topStudent["Total"]:.2f}")
+    for student in students:
+        if student["Total"] > topStudent["Total"]:
+            topStudent = student
+
+    print("\n--- Highest Scoring Student ---")
+    print(f"Name: {topStudent['Name']}")
+    print(f"Total Marks: {topStudent['Total']:.2f}")
+    print(f"Average: {topStudent['Average']:.2f}")
 
 
 
